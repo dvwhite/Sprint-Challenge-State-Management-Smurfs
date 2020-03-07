@@ -38,6 +38,44 @@ export const smurfReducer = (state = initialState, action) => {
         isFetching: false,
         error: action.payload
       };
+    case ADD_SMURF_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case ADD_SMURF_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        smurfs: [...state.smurfs, action.payload]
+      };
+    case ADD_SMURF_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      };
+    case UPDATE_SMURF_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case UPDATE_SMURF_SUCCESS:
+      return {
+        ...state,
+        smurfs: [
+          ...state.smurfs.filter(smurf => smurf.id !== action.payload.id),
+          action.payload
+        ]
+      };
+    case UPDATE_SMURF_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      };
     default:
       return state;
   }
