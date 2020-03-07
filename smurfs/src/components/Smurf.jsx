@@ -11,7 +11,9 @@ const Card = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #88CCFF;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
   width: 345px;
   height: auto;
   margin: 2%;
@@ -64,7 +66,7 @@ const Smurf = ({ data, updateSmurf }) => {
           onChange={handleChange}
         />
       ) : (
-        <h1>Name: {data.name}</h1>
+        <h1>{data.name}</h1>
       )}
       {isEditing ? (
         <input
@@ -87,7 +89,7 @@ const Smurf = ({ data, updateSmurf }) => {
         <p>Height: {data.height}</p>
       )}
       {isEditing ? (
-        <input type="submit"></input>
+        <input type="submit" value="submit"></input>
       ) : (
         <button onClick={handleClick}>Edit</button>
       )}
