@@ -36,11 +36,11 @@ export const getSmurfs = () => dispatch => {
  * @param: none
  * @returns: A thunk that takes dispatch as an argument
  */
-export const addSmurf = () => dispatch => {
+export const addSmurf = (smurf) => dispatch => {
   const urlAPI = "http://localhost:3333/smurfs";
   dispatch({ type: ADD_SMURF_START });
   axios
-    .post(urlAPI)
+    .post(urlAPI, smurf)
     .then(res => {
       console.log("addSmurf:", res)
       dispatch({ type: ADD_SMURF_SUCCESS, payload: res.data });
@@ -61,7 +61,8 @@ export const updateSmurf = (smurf) => dispatch => {
   axios
     .put(urlAPI, smurf)
     .then(res => {
-      dispatch({ type: UPDATE_SMURF_SUCCESS, payload: res.data[0] });
+      console.log("updateSmurf:", res)
+      dispatch({ type: UPDATE_SMURF_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: UPDATE_SMURF_FAIL, payload: err.response });
