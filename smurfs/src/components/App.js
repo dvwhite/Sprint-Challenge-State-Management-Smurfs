@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 // Component imports
-import { SmurfVillage } from './SmurfVillage';
+import SmurfVillage  from './SmurfVillage';
 
 const App = () => {
   return (
