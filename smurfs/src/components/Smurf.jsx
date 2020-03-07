@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 // Styled components
 const Card = styled.form`
   border-bottom: 1px solid lightgray;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
