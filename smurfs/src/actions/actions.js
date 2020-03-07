@@ -24,7 +24,6 @@ export const getSmurfs = () => dispatch => {
   axios
     .get(urlAPI)
     .then(res => {
-      console.log("getSmurfs:", res)
       dispatch({ type: FETCH_ALL_SMURFS_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -62,7 +61,6 @@ export const updateSmurf = (smurf) => dispatch => {
   axios
     .put(urlAPI, smurf)
     .then(res => {
-      console.log("updateSmurf:", res)
       dispatch({ type: UPDATE_SMURF_SUCCESS, payload: res.data[0] });
     })
     .catch(err => {
