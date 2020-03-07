@@ -10,7 +10,7 @@ import {
   ADD_SMURF_FAIL,
   UPDATE_SMURF_START,
   UPDATE_SMURF_SUCCESS,
-  UPDATE_SMURF_FAIL
+  UPDATE_SMURF_FAIL,
 } from "./../constants/ActionTypes";
 
 /**
@@ -24,6 +24,7 @@ export const getSmurfs = () => dispatch => {
   axios
     .get(urlAPI)
     .then(res => {
+      console.log("getSmurfs:", res)
       dispatch({ type: FETCH_ALL_SMURFS_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -37,11 +38,12 @@ export const getSmurfs = () => dispatch => {
  * @returns: A thunk that takes dispatch as an argument
  */
 export const addSmurf = () => dispatch => {
-  const urlAPI = "/smurfs";
+  const urlAPI = "http://localhost:3333/smurfs";
   dispatch({ type: ADD_SMURF_START });
   axios
     .post(urlAPI)
     .then(res => {
+      console.log("addSmurf:", res)
       dispatch({ type: ADD_SMURF_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -55,12 +57,13 @@ export const addSmurf = () => dispatch => {
  * @returns: A thunk that takes dispatch as an argument
  */
 export const updateSmurf = (smurf) => dispatch => {
-  const urlAPI = `/smurfs/{smurf.id}`;
+  const urlAPI = `http://localhost:3333/smurfs/${smurf.id}`;
   dispatch({ type: UPDATE_SMURF_START });
   axios
     .put(urlAPI, smurf)
     .then(res => {
-      dispatch({ type: UPDATE_SMURF_SUCCESS, payload: res.data });
+      console.log("updateSmurf:", res)
+      dispatch({ type: UPDATE_SMURF_SUCCESS, payload: res.data[0] });
     })
     .catch(err => {
       dispatch({ type: UPDATE_SMURF_FAIL, payload: err.response });
