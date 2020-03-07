@@ -48,7 +48,7 @@ export const smurfReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        smurfs: [...state.smurfs, action.payload]
+        smurfs: [...action.payload]
       };
     case ADD_SMURF_FAIL:
       return {
@@ -65,10 +65,7 @@ export const smurfReducer = (state = initialState, action) => {
     case UPDATE_SMURF_SUCCESS:
       return {
         ...state,
-        smurfs: [
-          ...state.smurfs.filter(smurf => smurf.id !== action.payload.id),
-          action.payload
-        ]
+        smurfs: [...action.payload]
       };
     case UPDATE_SMURF_FAIL:
       return {

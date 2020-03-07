@@ -89,7 +89,7 @@ const Smurf = ({ data, updateSmurf }) => {
         <p>Height: {data.height}</p>
       )}
       {isEditing ? (
-        <input type="submit" value="submit"></input>
+        <input type="submit" value="Submit"></input>
       ) : (
         <button onClick={handleClick}>Edit</button>
       )}

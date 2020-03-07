@@ -10,3 +10,11 @@ body {
 .App {
   text-align: center;
 }
+
+input {
+  margin-bottom: 5%;
+}
+
+h1, h2 {
+  margin: 1%;
+}

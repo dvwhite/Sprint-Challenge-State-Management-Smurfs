@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 // Component imports
 import Smurf from './Smurf';
+import Form from './Form';
 
 // Redux imports
 import { connect } from 'react-redux';
@@ -27,13 +28,16 @@ const SmurfVillage = (props) => {
   }, [])
 
   return (
-    <Cards>
-      {
-        props.smurfs.map((smurf, idx) =>
-          <Smurf data={smurf} key={idx} />
-        )
-      }
-    </Cards>
+    <>
+      <Cards>
+        {
+          props.smurfs.map((smurf, idx) =>
+            <Smurf data={smurf} key={idx} />
+          )
+        }
+      <Form />
+      </Cards>
+    </>
   )
 }
 
