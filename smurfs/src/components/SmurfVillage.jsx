@@ -29,8 +29,8 @@ const SmurfVillage = (props) => {
   return (
     <Cards>
       {
-        props.smurfs.map(smurf =>
-          <Smurf data={smurf} />
+        props.smurfs.map((smurf, idx) =>
+          <Smurf data={smurf} key={idx} />
         )
       }
     </Cards>
