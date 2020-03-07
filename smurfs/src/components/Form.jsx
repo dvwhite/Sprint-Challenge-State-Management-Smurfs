@@ -14,7 +14,7 @@ const Card = styled.form`
   background-color: #88CCFF;
   color: white;
   text-shadow: 2px 2px 4px #000;
-  width: 345px;
+  width: 20%;
   height: auto;
   margin: 2%;
   padding: 2%;
