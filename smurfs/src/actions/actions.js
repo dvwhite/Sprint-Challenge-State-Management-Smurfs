@@ -19,7 +19,7 @@ import {
  * @returns: A thunk that takes dispatch as an argument
  */
 export const getSmurfs = () => dispatch => {
-  const urlAPI = "/smurfs";
+  const urlAPI = "http://localhost:3333/smurfs";
   dispatch({ type: FETCH_ALL_SMURFS_START });
   axios
     .get(urlAPI)
