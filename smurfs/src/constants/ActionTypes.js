@@ -1,0 +1,12 @@
+// Get all smurfs
+export const FETCH_ALL_SMURFS_START = 'FETCH_ALL_SMURFS_START';
+export const FETCH_ALL_SMURFS_SUCCESS = 'FETCH_ALL_SMURFS_SUCCESS';
+export const FETCH_ALL_SMURFS_FAIL = 'FETCH_ALL_SMURFS_FAIL';
+// Add a smurf to smurfs
+export const ADD_SMURF_START = 'ADD_SMURF_START';
+export const ADD_SMURF_SUCCESS =  'ADD_SMURF_SUCCESS';
+export const ADD_SMURF_FAIL = 'ADD_SMURF_FAIL';
+// Update a smurf in smurfs
+export const UPDATE_SMURF_START = 'UPDATE_SMURF_START';
+export const UPDATE_SMURF_SUCCESS = 'UPDATE_SMURF_SUCCESS';
+export const UPDATE_SMURF_FAIL = 'UPDATE_SMURF_FAIL';
